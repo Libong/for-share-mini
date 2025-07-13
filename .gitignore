@@ -1,0 +1,51 @@
+# 忽略微信小程序自动生成的临时文件和配置文件
+.project
+.launch.json
+.vscode/
+dist/
+build/
+node_modules/
+miniprogram_npm/
+miniprogram_dist/
+miniprogram_wxml/
+miniprogram_wxss/
+miniprogram_js/
+miniprogram_json/
+miniprogram/
+*.wxss.d.ts
+*.wxml.d.ts
+*.wxs.d.ts
+*.wxml.map
+*.wxss.map
+*.js.map
+*.json.map
+
+# 忽略本地开发工具生成的临时文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.swn
+*.swo~
+*.swp~
+*.swn~
+
+# 忽略日志文件
+*.log
+logs/
+
+# 忽略用户自定义的临时文件
+temp/
+cache/
+*.tmp
+*.bak
+
+# 忽略编译生成的文件
+*.min.js
+*.min.wxss
+*.min.wxml
+*.min.json
+
+# 忽略微信开发者工具的配置文件
+project.config.json
+project.settings.json
