@@ -1,3 +1,5 @@
+#custom
+.idea
 # 忽略微信小程序自动生成的临时文件和配置文件
 .project
 .launch.json
@@ -11,7 +13,7 @@ miniprogram_wxml/
 miniprogram_wxss/
 miniprogram_js/
 miniprogram_json/
-miniprogram/
+#miniprogram/
 *.wxss.d.ts
 *.wxml.d.ts
 *.wxs.d.ts
