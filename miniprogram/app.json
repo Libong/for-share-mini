@@ -1,7 +1,11 @@
 {
+  "miniprogram": {
+    "version": "2.20.0"
+  },
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/photo/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -20,5 +24,10 @@
   },
   "componentFramework": "glass-easel",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "permission": {
+    "scope.camera": {
+      "desc": "需要使用您的摄像头进行拍照识别"
+    }
+  }
 }

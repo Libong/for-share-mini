@@ -5,7 +5,11 @@ const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia0
 
 Component({
   data: {
-    motto: '你好 欢迎光临',
+    forwardClue:'立即前往',
+    forwardHiddenClue:'你好 \u00A0\u00A0欢迎光临',
+    isTouched: false, // 用于标记箭头是否被触摸
+    tooltipOpacity: 0, // 提示词的透明度
+    tooltipY: 20 ,// 提示词的初始偏移量
     userInfo: {
       avatarUrl: defaultAvatarUrl,
       nickName: '',
@@ -14,12 +18,30 @@ Component({
     canIUseGetUserProfile: wx.canIUse('getUserProfile'),
     canIUseNicknameComp: wx.canIUse('input.type.nickname'),
   },
+  // 事件处理函数
   methods: {
-    // 事件处理函数
-    bindViewTap() {
+    //前往主页
+    goToCameraPage() {
+      console.log("1111")
       wx.navigateTo({
-        url: '../logs/logs',
-      })
+        url: '/pages/photo/index' // 拍照页面的路径
+      });
+    },
+    // 触摸箭头时触发
+    onTouchStart() {
+      this.setData({
+        isTouched: true, // 标记箭头被触摸
+        tooltipOpacity: 1, // 显示提示词
+        tooltipY: 0 // 提示词向上移动
+      });
+
+      // 2秒后隐藏提示词
+      setTimeout(() => {
+        this.setData({
+          tooltipOpacity: 0,
+          tooltipY: 20
+        });
+      }, 2000);
     },
     onChooseAvatar(e: any) {
       const { avatarUrl } = e.detail

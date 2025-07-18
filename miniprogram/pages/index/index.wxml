@@ -17,17 +17,19 @@
         <view wx:else> 请使用2.10.4及以上版本基础库 </view>
       </block>
       <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view>
     <!-- 用户 -->
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
-    <!-- 添加左箭头图标 -->
-    <view class="arrow-container" bindtap="goToCameraPage">
-      <icon type="back" size="24" color="#000" />
+    <view class="arrow-container" bindtouchstart="onTouchStart" bindtap="goToCameraPage">
+      <view class="clue-up">
+        <text class="">{{forwardClue}}</text>
+        <mp-icon class="arrow-icon" type="field" icon="arrow" color="black" size="{{15}}"></mp-icon>
+      </view>
+      <view class="clue-down" style="opacity: {{tooltipOpacity}}; transform: translateY({{tooltipY}}px);">
+        {{forwardHiddenClue}}
+      </view>
     </view>
   </view>
 </scroll-view>

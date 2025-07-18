@@ -1,0 +1,10 @@
+<view class="container">
+    <button bindtap="takePhoto">拍照识别</button>
+    <image wx:if="{{imagePath}}" src="{{imagePath}}" mode="widthFix" style="width: 100%; margin-top: 20px;"></image>
+    <view wx:if="{{ocrResult}}">
+        <text>识别结果：</text>
+        <view wx:for="{{ocrResult}}" wx:key="index">
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+</view>

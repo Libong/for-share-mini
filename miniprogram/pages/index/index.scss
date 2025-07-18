@@ -25,10 +25,6 @@ page {
   border-radius: 50%;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
-
 .avatar-wrapper {
   padding: 0;
   width: 56px !important;
@@ -61,7 +57,36 @@ page {
   flex: 1;
 }
 .arrow-container {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
   text-align: left;
-  padding-left: 20px;
+  //padding-left: 20px;
+  transition: transform 0.3s ease; /* 确保箭头图标也支持动画 */
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease; /* 确保箭头图标也支持动画 */
+  margin-left: 10px;
+}
+/* 当箭头被触摸时，向左移动 */
+//.arrow-container.touched {
+//  transform: translateX(-20px); /* 向左移动 20px */
+//}
+.clue-up{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clue-down {
+  font-size: 14px;
+  color: rgba(164, 174, 194, 0.75);
+  //background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
